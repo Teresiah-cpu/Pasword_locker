@@ -1,6 +1,6 @@
 class user:
     """
-    Class that allows user to create a user password.
+    Class that generates a new instance of a user password.
     """
     user_name= ''
     user_password=''
@@ -12,3 +12,6 @@ class user:
 
         self.user_name = user_name
         self.user_password= user_password
+
+   
+ 
