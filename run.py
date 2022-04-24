@@ -1,8 +1,10 @@
 from credentials import Credentials
-from user import user
+from user import User
 
 
 def create_account(acc_name, user_name, password):
+    user=User(acc_name, user_name, password)
+    return user
     '''
     Function to creates new account
     '''
@@ -31,7 +33,7 @@ def del_account(Credentials):
 def main():
     print("Hello Welcome to your password locker site. What is your name?")
     name = input()
-
+    print('\n')
     print(f"Hello {name}. what would you like to do?")
     print('\n')
 
@@ -74,23 +76,22 @@ while True:
                     print(f"New {acc_name} Account Created")
                     print('\n')
                     if short_code == "da":
-
-                if display_accounts:
+                       if display_accounts:
                         print("Below is a list of all your accounts")
                         print('\n')
-
+  
                         for account in display_accounts():
-                            print(f"{account.acc_name} {account.user_name} .....{account.password}")
+                         print(f"{account.acc_name} {account.user_name} .....{account.password}")
 
                         print('\n')
 
                         print('Enter the name of an account you wish to delete.')
                         del_name= input() 
 
-                                else:
-                            Print(' Please input a valid name of an account to delete.')
-
                     else:
+                        print(' Please input a valid name of an account to delete.')
+
+                else:
                         print('\n')
                         print("No accounts saved yet")
                         print('\n')

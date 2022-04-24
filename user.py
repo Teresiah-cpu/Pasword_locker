@@ -1,4 +1,4 @@
-class user:
+class User:
     """
     Class that generates a new instance of a user password.
     """
@@ -17,9 +17,9 @@ class user:
     def save_password(self):
 
         '''
-        save_password method saves password string.
+        a method that saves password.
         '''
 
-        user.user_password
+        User.user_password
 
  
