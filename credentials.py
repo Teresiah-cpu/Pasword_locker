@@ -21,18 +21,20 @@ class Credentials:
         method that returns the accounts_list
         '''
         return cls.accounts_list
+    
+        
     @classmethod
-    def save_credential(self):
+    def save_credential(cls):
 
         '''
         save_credential method saves account objects into accounts_list
         '''
 
-        Credentials.accounts_list.append(self)
+        Credentials.accounts_list.append(cls)
     
     @classmethod
-    def delete_account(self):
+    def delete_account(cls):
         '''
         method that deletes a saved account from the account list
         '''
-        Credentials.accounts_list.remove(self)    
+        Credentials.accounts_list.remove(cls)    

@@ -47,7 +47,7 @@ class TestCredentials(unittest.TestCase):
         a test to know if we can delete an account.
         '''
         self.new_account.save_credential()
-        test_account = Credentials("Faacebook","Tesh_Githua","0741626119")
+        test_account = Credentials("Facebook","Tesh_Githua","0741626119")
         test_account.save_credential()
 
         self.new_account.delete_account()

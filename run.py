@@ -2,13 +2,8 @@ from credentials import Credentials
 from user import User
 
 
-def create_account(acc_name, user_name, password):
-    user=User(acc_name, user_name, password)
-    return user
-    '''
-    Function to creates new account
-    '''
-    new_account= Credentials(acc_name, user_name, password)
+def create_account(acc_name, user_name, user_password):
+    new_account= Credentials(acc_name, user_name, user_password)
     return new_account
 
 def save_credential (credentials):
@@ -55,10 +50,10 @@ while True:
             input_password = input()
             if (input_password == user_password):
                 print("Use these short codes : cr - create a new account, di - display accounts, fi -find an account, ex -exit the account list ")
+            
+                short_code= input().lower()
 
-                short_code:any = input().lower()
-
-                if short_code == "ca":
+                if short_code == "cr":
                     print("New Account")
                     print("-"*10)
 
@@ -75,21 +70,18 @@ while True:
                     print('\n')
                     print(f"New {acc_name} Account Created")
                     print('\n')
-                    if short_code == "da":
-                       if display_accounts:
+                elif short_code == "di":
+                    if display_accounts:
                         print("Below is a list of all your accounts")
                         print('\n')
-  
+
                         for account in display_accounts():
-                         print(f"{account.acc_name} {account.user_name} .....{account.password}")
+                            print(f" {account.acc_name} {account.user_name} .....{account.user_password}")
 
                         print('\n')
 
-                        print('Enter the name of an account you wish to delete.')
-                        del_name= input() 
-
                     else:
-                        print(' Please input a valid name of an account to delete.')
+                        print(' account not found,kindly create a new account')
 
                 else:
                         print('\n')
