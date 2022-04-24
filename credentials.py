@@ -14,3 +14,10 @@ class Credentials:
         self.acc_name = acc_name
         self.user_name = user_name
         self.user_password = user_password
+
+    @classmethod
+    def display_accounts(cls):
+        '''
+        method that returns the accounts_list
+        '''
+        return cls.accounts_list
