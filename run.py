@@ -48,3 +48,16 @@ while True:
                     print('\n')
                     print(f"New {acc_name} Account Created")
                     print('\n')
+                    if short_code == "da":
+
+                if display_accounts:
+                        print("Here is a list of all your accounts")
+                        print('\n')
+
+                        for account in display_accounts():
+                            print(f"{account.acc_name} {account.user_name} .....{account.password}")
+
+                        print('\n')
+
+                        print('Enter the name of an account you wish to delete.')
+                        del_name= input()    
