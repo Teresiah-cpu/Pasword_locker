@@ -21,3 +21,11 @@ class Credentials:
         method that returns the accounts_list
         '''
         return cls.accounts_list
+    @classmethod
+    def save_credential(self):
+
+        '''
+        save_credential method saves account objects into accounts_list
+        '''
+
+        Credentials.accounts_list.append(self)
