@@ -76,7 +76,7 @@ while True:
                         print('\n')
 
                         for account in display_accounts():
-                            print(f" Account:{account.acc_name}{account.user_name} .....{account.user_password}")
+                            print(f"{account.acc_name}{account.user_name} .....{account.user_password}")
 
                         print('\n')
 
