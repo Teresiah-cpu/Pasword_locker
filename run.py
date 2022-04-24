@@ -2,6 +2,31 @@ from credentials import Credentials
 from user import user
 
 
+def create_account(acc_name, user_name, password):
+    '''
+    Function to creates new account
+    '''
+    new_account= Credentials(acc_name, user_name, password)
+    return new_account
+
+def save_credential (credentials):
+    '''
+    Function to delete a credentials
+    '''
+    credentials.save_credential()
+
+def display_accounts():
+    '''
+    Function that returns all the saved accounts
+    '''
+    return Credentials.display_accounts()
+
+
+def del_account(Credentials):
+    '''
+    Function to delete an account
+    '''
+    Credentials.delete_account()
 
 def main():
     print("Hello Welcome to your password locker site. What is your name?")
@@ -51,7 +76,7 @@ while True:
                     if short_code == "da":
 
                 if display_accounts:
-                        print("Here is a list of all your accounts")
+                        print("Below is a list of all your accounts")
                         print('\n')
 
                         for account in display_accounts():
@@ -60,4 +85,22 @@ while True:
                         print('\n')
 
                         print('Enter the name of an account you wish to delete.')
-                        del_name= input()    
+                        del_name= input() 
+
+                                else:
+                            Print(' Please input a valid name of an account to delete.')
+
+                    else:
+                        print('\n')
+                        print("No accounts saved yet")
+                        print('\n')
+            else:
+                print('Wrong Password')
+
+        else:
+            print('Wrong Username')
+
+
+if __name__ == '__main__':
+
+    main()   
