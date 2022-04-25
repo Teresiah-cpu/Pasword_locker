@@ -6,6 +6,7 @@ def create_account(acc_name, user_name, user_password):
     new_account= Credentials(acc_name, user_name, user_password)
     return new_account
 
+
 def save_credential (credentials):
     '''
     Function to delete a credentials
