@@ -12,6 +12,11 @@ def save_credential (credentials):
     Function to delete a credentials
     '''
     credentials.save_credential()
+def find_credential(acc_name):
+    """
+    find a credential from the credential list using account
+    """
+    return Credentials.find_credential(acc_name)
 
 def display_accounts():
     '''
@@ -34,7 +39,7 @@ def main():
     print('\n')
 
 
-while True:
+    while True:
         print("Hello. Welcome back to Password Locker!")
         print('\n')
         print('Create a login username and a password')
@@ -52,7 +57,7 @@ while True:
             if (input_password == user_password):
                 print("Use these short codes : cr - create a new account, di - display accounts, fi -find an account, ex -exit the account list ")
             
-                short_code= input().lower()
+                short_code= input("").lower().strip()
 
                 if short_code == "cr":
                     print("New Account")
@@ -70,6 +75,10 @@ while True:
                     save_credential(create_account(acc_name, user_name, user_password)) # create and save new account.
                     print('\n')
                     print(f"New {acc_name} Account Created")
+                    print("\n\n")
+                    # print("Here are your account details")
+                    # print(f"ACCOUNT_NAME: {acc_name}\nUSERNAME: {user_name}\nUSER_PASSWORD: {user_password}")
+
                     print('\n')
                 elif short_code == "di":
                     if display_accounts:
@@ -84,12 +93,27 @@ while True:
                     else:
                         print(' account not found,kindly create a new account')
                 elif short_code == "fi": 
-            
+                    print("Enter the Account Name you want to search for")
+                    search_name = input().lower()
+                    if find_credential(search_name):
+                        search_credential = find_credential(search_name)
+                        print(f"Account Name : {search_credential.acc_name}")
+                        print('-' * 60)
+                        print(f"User Name: {search_credential.name} Password :{search_credential.password}")
+                        print('-' * 60)
+                    else:
+                        print("The Credential does not exist")
+                        print('\n')
                 else:
+                    print('choose short code to continue')        
+                    
+            else:
                 print('Wrong Password')
 
         else:
             print('Wrong Username')
+    else:
+        print('invalid')
 
 
 if __name__ == '__main__':
