@@ -15,12 +15,12 @@ class Credentials:
         self.user_name = user_name
         self.user_password = user_password
 
-    @classmethod
-    def display_accounts(cls):
+    # @classmethod
+    def display_accounts(self):
         '''
         method that returns the accounts_list
         '''
-        return cls.accounts_list
+        return self.accounts_list
     
         
     @classmethod
