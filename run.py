@@ -83,12 +83,9 @@ while True:
 
                     else:
                         print(' account not found,kindly create a new account')
-
+                elif short_code == "fi": 
+            
                 else:
-                        print('\n')
-                        print("No accounts saved yet")
-                        print('\n')
-            else:
                 print('Wrong Password')
 
         else:
