@@ -2,7 +2,7 @@ class User:
     """
     Class that generates a new instance of a user password.
     """
-    # user_list=[]
+    user_list=[]
     # acc_name=''
     user_name= ''
     user_password=''

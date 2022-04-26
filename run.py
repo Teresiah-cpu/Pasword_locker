@@ -32,15 +32,8 @@ def del_account(Credentials):
     Credentials.delete_account()
 
 def main():
-    # print("Hello Welcome to your password locker site. What is your name?")
-    # name = input()
-    # print('\n')
-    # print(f"Hello {name}. what would you like to do?")
-    # print('\n')
-
-
     while True:
-        print("Hello. Welcome back to Password Locker!")
+        print("Hello. Welcome  to Password Locker!")
         print('\n')
         print('Create account')
         print('\n')
@@ -82,20 +75,21 @@ def main():
                     print('\n')
                     # print(f"New {acc_name} Account Created")
 
-                    print("Here are your account details")
-                    print(f"ACCOUNT_NAME: {acc_name}\nUSERNAME: {user_name}\nUSER_PASSWORD: {user_password}")
+                
                     # print("di - display accounts, fi -find an account, ex -exit the account list ")
 
                     # print('\n')
                 elif short_code == "di":
                     if display_accounts:
-                        print("Below is a list of all your accounts")
-                        print('\n')
+                        print("Here are your account details")
+                        print(f"ACCOUNT_NAME: {acc_name}\nUSERNAME: {user_name}\nUSER_PASSWORD: {user_password}")
+                        # print("Below is a list of all your accounts")
+                        # print('\n')
 
-                        for account in display_accounts():
-                            print(f"{account.acc_name}{account.user_name} .....{account.user_password}")
+                        # for account in display_accounts():
+                        #     print(f"{account.acc_name}{account.user_name} .....{account.user_password}")
 
-                        print('\n')
+                        # print('\n')
 
                     else:
                         print(' account not found,kindly create a new account')
@@ -106,7 +100,7 @@ def main():
                         search_credential = find_credential(search_name)
                         print(f"Account Name : {search_credential.acc_name}")
                         print('-' * 60)
-                        print(f"User Name: {search_credential.name} Password :{search_credential.password}")
+                        print(f"User Name: {search_credential.user_name} Password :{search_credential.user_password}")
                         print('-' * 60)
                     else:
                         print("The Credential does not exist")
@@ -118,9 +112,9 @@ def main():
                 print('Wrong Password')
 
         else:
-            print('Wrong Username')
+            print('Wrong password')
     else:
-        print('invalid')
+        print('Wrong username')
 
 
 if __name__ == '__main__':
