@@ -24,4 +24,3 @@ class User:
         '''
 
         User.user_password
-

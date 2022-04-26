@@ -1,3 +1,5 @@
+
+
 import unittest
 from credentials import Credentials
 
@@ -8,13 +10,13 @@ class TestCredentials(unittest.TestCase):
     Args:
         unittest.TestCase: TestCase class that helps in creating test cases
     '''
-    def setUp(self):
+def setUp(self):
         '''
         Set up method to run before each test cases.
         '''
         self.new_account = Credentials("Facebook","Tesh Githua","0741626119") 
 
-    def test_init(self):
+def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
         '''
@@ -24,7 +26,7 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_account.user_password, "0741626119")
 
 
-    def test_display_all_accounts(self):
+def test_display_all_accounts(self):
         '''
         method that returns a list of saved accounts
         '''
@@ -32,7 +34,7 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(Credentials.display_accounts(), Credentials.accounts_list)
 
 
-    def test_save_all_accounts(self):
+def test_save_all_accounts(self):
         '''
         method that saves a new account
         '''
@@ -42,7 +44,7 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(len(Credentials.accounts_list), 3)
 
 
-    def test_delete_account(self):
+def test_delete_account(self):
         '''
         a test to know if we can delete an account.
         '''
@@ -55,4 +57,4 @@ class TestCredentials(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+      unittest.main()

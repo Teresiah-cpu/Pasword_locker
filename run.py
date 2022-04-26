@@ -32,18 +32,22 @@ def del_account(Credentials):
     Credentials.delete_account()
 
 def main():
-    print("Hello Welcome to your password locker site. What is your name?")
-    name = input()
-    print('\n')
-    print(f"Hello {name}. what would you like to do?")
-    print('\n')
+    # print("Hello Welcome to your password locker site. What is your name?")
+    # name = input()
+    # print('\n')
+    # print(f"Hello {name}. what would you like to do?")
+    # print('\n')
 
 
     while True:
         print("Hello. Welcome back to Password Locker!")
         print('\n')
-        print('Create a login username and a password')
+        print('Create account')
         print('\n')
+        print('Enter firstname')
+        username =  input()
+        print('Enter lastname')
+        username =  input()
         print('Enter username')
         username =  input()
         print('Enter password')
@@ -56,6 +60,8 @@ def main():
             input_password = input()
             if (input_password == user_password):
                 print("Use these short codes : cr - create a new account, di - display accounts, fi -find an account, ex -exit the account list ")
+
+            
             
                 short_code= input("").lower().strip()
 
@@ -74,12 +80,13 @@ def main():
 
                     save_credential(create_account(acc_name, user_name, user_password)) # create and save new account.
                     print('\n')
-                    print(f"New {acc_name} Account Created")
-                    print("\n\n")
-                    # print("Here are your account details")
-                    # print(f"ACCOUNT_NAME: {acc_name}\nUSERNAME: {user_name}\nUSER_PASSWORD: {user_password}")
+                    # print(f"New {acc_name} Account Created")
 
-                    print('\n')
+                    print("Here are your account details")
+                    print(f"ACCOUNT_NAME: {acc_name}\nUSERNAME: {user_name}\nUSER_PASSWORD: {user_password}")
+                    # print("di - display accounts, fi -find an account, ex -exit the account list ")
+
+                    # print('\n')
                 elif short_code == "di":
                     if display_accounts:
                         print("Below is a list of all your accounts")
